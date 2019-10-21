@@ -6,14 +6,8 @@ class Queue {
  public:
   void push(const T& val);
   const T& pop();
-
-  bool empty() const {
-    return input_.empty() && output_.empty();
-  }
-
-  size_t size() const {
-    return input_.size() + output_.size();
-  }
+  bool empty() const;
+  size_t size() const;
 
  private:
   std::stack<T> input_, output_;
@@ -39,4 +33,14 @@ const T& Queue<T>::pop() {
 template <class T>
 void Queue<T>::push(const T& val) {
   input_.push(val);
+}
+
+template <class T>
+bool Queue<T>::empty() const {
+  return input_.empty() && output_.empty();
+}
+
+template <class T>
+size_t Queue<T>::size() const {
+  return input_.size() + output_.size();
 }
