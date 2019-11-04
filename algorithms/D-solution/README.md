@@ -2,4 +2,4 @@
 
 ## Complexity
 
-$$O(n \cdot k)$$
+`O(nk)`
