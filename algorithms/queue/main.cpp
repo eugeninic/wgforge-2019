@@ -1,7 +1,6 @@
 #include <iostream>
 #include "queue.h"
 
-// TODO : references in c++
 
 int main() {
   Queue<int> q;
@@ -15,11 +14,11 @@ int main() {
         q.push(b);
         break;
       case 2:
-        std::cout << q.pop() << std::endl;
+        std::cout << "Poped element: " << q.pop() << std::endl;
         break;
 
     }
-    std::cout  << q.empty() << "; " << q.size() << std::endl;
+    std::cout << "Empty: " << q.empty() << ", size: " << q.size() << std::endl;
   }
   return 0;
 }

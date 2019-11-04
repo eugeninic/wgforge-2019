@@ -6,7 +6,7 @@
 
 * inorder
 * postorder
-* bfs
+* level order traversal (bfs)
 
 ### Class __Node__ looks like:
 

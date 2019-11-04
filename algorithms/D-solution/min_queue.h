@@ -1,9 +1,11 @@
 #include <stack>
+#include <limits>
 
 
 template <class T>
 class MinQueue {
  public:
+  MinQueue(T max): input_min_(max) {}
   MinQueue(): input_min_(std::numeric_limits<T>::max()) {}
   void push(T val);
   T pop();
@@ -58,9 +60,6 @@ size_t MinQueue<T>::size() const {
 
 template <class T>
 T MinQueue<T>::min() const {
-  if (input_min_ == std::numeric_limits<T>::max() && output_stack_.empty()) {
-    throw std::runtime_error("min() from empty minQueue");
-  }
   return output_stack_.empty() ? input_min_ :
          input_min_ ? output_stack_.top() : std::min(output_stack_.top(), input_min_);
 }
