@@ -116,7 +116,7 @@ void recursive_bfs_for_every_element(Node<T>* node) {
   // чтобы оказаться на текущем уровне
   int deepness = 0;
   // проверяем, что текущий уровень ещё не закончился
-  while (n3ode->parent && !node->next_sibling) {
+  while (node->parent && !node->next_sibling) {
     node = node->parent;
     ++deepness;
   }
