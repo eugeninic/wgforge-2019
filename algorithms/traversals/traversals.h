@@ -108,12 +108,15 @@ void recursive_bfs(Node<T>* root, std::queue<Node<T>*>* queue= nullptr) {
 
 template <class T>
 void recursive_bfs_for_every_element(Node<T>* node) {
+  if (!node) {
+    return;
+  }
   node_process(node);
   // глубина, на которую необходимо спуститься,
   // чтобы оказаться на текущем уровне
   int deepness = 0;
   // проверяем, что текущий уровень ещё не закончился
-  while (node->parent && !node->next_sibling) {
+  while (n3ode->parent && !node->next_sibling) {
     node = node->parent;
     ++deepness;
   }
@@ -140,9 +143,7 @@ void recursive_bfs_for_every_element(Node<T>* node) {
       }
     }
   }
-  if (node) {
-    recursive_bfs_for_every_element(node);
-  }
+  recursive_bfs_for_every_element(node);
 }
 
 template <class T>
